@@ -1,0 +1,594 @@
+﻿@using AMZEnterprisePortfolio.Models
+@model AMZEnterprisePortfolio.Models.ViewModels.HomeVm
+@{
+    var settings = Model.Setting;
+    var socialMedias = Model.SocialMedias;
+    var favors = Model.Favors;
+    var resumes = Model.Resumes;
+    var skills = Model.Skills;
+    var portfolios = Model.Portfolios;
+}
+@section Scripts{
+    <script>
+        function CompleteForm(xhr) {
+            var jsonResult = xhr.responseJSON;
+
+            $.alert({
+                title: '',
+                content: `<p>${jsonResult.message}</p>`,
+                type: 'red',
+                typeAnimated: true,
+                buttons: {}
+            });
+
+            $("#Contact_FullName").val("");
+            $("#Contact_Email").val("");
+            $("#Contact_Subject").val("");
+            $("#Contact_Message").val("");
+        }
+    </script>
+}
+@foreach (var portfolio in portfolios)
+{
+    <div class="portfolio-single modal fade" id="@portfolio.Title" tabindex="-1" role="dialog" aria-labelledby="portfolioModalScrollable" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content text-muted">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="portfolioModalScrollable">@portfolio.Title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="pt-4 pb-5">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 col-md-10 mx-auto">
+                                    <div class="text-center">
+                                        <h2 class="mb-3">Single <span class="base-color"> Portfolio</span></h2>
+                                        <p class="max-width-450">@Html.Raw(portfolio.ShortDescription)</p>
+                                    </div>
+                                    <div class="row contact-info mt-5 justify-content-center">
+                                        <div class="col-md-4">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6>Employer :</h6>
+                                                    <p class="mb-0">@portfolio.EmployerFullName</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 mt-3 mt-md-0">
+                                            <div class="text-center">
+                                                <div>
+                                                    <h6>Skills:</h6>
+                                                    <p class="mb-0">@portfolio.Technologies</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-5">
+                                        <div class="portfolio-single-item image-border">
+                                            <img src="@portfolio.FilePath" class="d-block" alt="@portfolio.Title">
+                                        </div>
+                                    </div>
+                                    <div class="text-md-left mt-5">
+                                        @Html.Raw(portfolio.Description)
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+<!--  Hero Start  -->
+<section id="hero" class="section hero-06 active">
+    <div class="display-table">
+        <div class="display-content">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 order-2 order-lg-1">
+                        <div class="hero-content">
+                            <h1 class="mb-3">I'm @settings.FullName</h1>
+                            <h4 class="text-capitalize mb-0"><span class="base-color">A  </span> <span class="element" data-elements="@settings.Qualifications"></span></h4>
+                            <p class="max-width-450 mx-0 my-4">@settings.Slogan</p>
+                            <ul class="list-inline hero-social">
+                                @foreach (var socialMedia in socialMedias)
+                                {
+                                    <li class="list-inline-item">
+                                        <a href="@socialMedia.Url">
+                                            <span class="@socialMedia.IconCss" title="@socialMedia.Title"></span>
+                                        </a>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 order-1 order-lg-2">
+                        <div class="hero-images">
+                            <div class="square">
+                                <img src="~/img/element_square.png" alt="/">
+                            </div>
+                            <div class="circle"></div>
+                            <div class="circle-2"></div>
+                            <div class="circle-3"></div>
+                            <div class="floating"></div>
+                            <div class="rounded-circle">
+                                <img src="~/img/AliMomenzadeh.jpg" alt="@settings.FullName" class="rounded-circle img-fluid">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  Hero End  -->
+<!--   About Start   -->
+<section id="about" class="about">
+    <div class="display-table">
+        <div class="display-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center title">
+                            <h2 class="text-dark">About <span class="base-color">Me</span></h2>
+                            <p class="text-muted max-width-450 mb-5">A happy full stack developer</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="image-border" style="width: 70%;height: 70%">
+                            <img src="~/img/AliMomenzadeh.jpg" alt="@settings.FullName">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-4 mt-lg-0">
+                        <div class="personal-item ">
+                            <h3 class="text-dark mt-4 mt-lg-0"><span class="base-color">Full Stack</span> Developer & Geek !</h3>
+                            <div class="row">
+                                <div class="col-6 personal-info">
+                                    <ul class="list-unstyled pt-4">
+                                        <li>
+                                            <p>Birthday : <span> @settings.BirthDate</span></p>
+                                        </li>
+                                        <li>
+                                            <p>Website : <span> @settings.WebsiteUrl1</span></p>
+                                        </li>
+                                        <li>
+                                            <p>Phone : <span> @settings.PhoneNumber1</span></p>
+                                        </li>
+                                        <li>
+                                            <p>City : <span> @settings.Address</span></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-6 personal-info">
+                                    <ul class="list-unstyled pt-4">
+                                        <li>
+                                            <p>Age : <span> @(DateTime.Now.Year - settings.BirthDate?.Year)</span></p>
+                                        </li>
+                                        <li>
+                                            <p>Degree : <span> @settings.EducationalDegree</span></p>
+                                        </li>
+                                        <li>
+                                            <p>Mail : <span> @settings.Email </span></p>
+                                        </li>
+                                        <li>
+                                            <p>Status : <span> @settings.AvailabilityStatus</span></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="button-border mt-3 mb-lg-0 mr-4">
+                            <a href="@settings.CvFilePath" class="pill-button">Download Cv</a>
+                        </div>
+                        <div class="button-border mt-3 mb-lg-0 to-contact">
+                            <a href="#contact" class="pill-button">Hire Me</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Count up Start -->
+                <div id="count-up" class="count-up text-center box-border">
+                    <div class="row">
+                        <!-- Item-01 -->
+                        <div class="col-6 col-lg-4 my-3 count-item ">
+                            <div class="count-icon">
+                                <i class="fa fa-star base-color"></i>
+                            </div>
+                            <div class="my-3">
+                                <span class="timer count-number" data-from="0" data-to="@settings.YearsCount" data-speed="5000">0</span>
+                            </div>
+                            <p class="mb-0">@Html.DisplayNameFor(x => x.Setting.YearsCount)</p>
+                        </div>
+                        <!-- Item-02 -->
+                        <div class="col-6 col-lg-4 my-3 count-item ">
+                            <div class="count-icon">
+                                <i class="fa fa-users base-color"></i>
+                            </div>
+                            <div class="my-3">
+                                <span class="timer count-number" data-from="0" data-to="@settings.ClientsCount" data-speed="5000">0</span>
+                            </div>
+                            <p class="mb-0">@Html.DisplayNameFor(x => x.Setting.ClientsCount)</p>
+                        </div>
+                        <!-- Item-03 -->
+                        <div class="col-6 col-lg-4 my-3 count-item ">
+                            <div class="count-icon">
+                                <i class="fa fa-code  base-color"></i>
+                            </div>
+                            <div class="my-3">
+                                <span class="timer count-number" data-from="0" data-to="@settings.ProjectsCount" data-speed="5000">0</span>
+                            </div>
+                            <p class="mb-0">@Html.DisplayNameFor(x => x.Setting.ProjectsCount)</p>
+                        </div>
+                    </div>
+                </div>
+                <!--  Count up End  -->
+                <!--  Service Start  -->
+                <div class="services">
+                    <div class="row mt-5 ">
+                        <div class="col-12">
+                            <h3 class="mb-0 text-dark">What <span class="base-color">I'm Doing</span></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var favor in favors)
+                        {
+                            <div class="col-lg-4 text-left">
+                                <div class="services-item box-hover-border">
+                                    <div class="float-left mt-lg-1 d-inline-block services-icon">
+                                        <i class="fa fa-diamond fa-2x base-color"></i>
+                                    </div>
+                                    <div class="services-content">
+                                        <h5 class="mb-3">@favor.Title</h5>
+                                        <p class="text-muted mb-0">
+                                            @Html.Raw(favor.Description)
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+
+                </div>
+                <!--   Service End   -->
+            </div>
+        </div>
+    </div>
+</section>
+<!--    About End    -->
+<!--    Resume Start   -->
+<section id="resume" class="resume">
+    <div class="display-table">
+        <div class="display-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center title">
+                            <h2 class="text-dark">My <span class="base-color">Resume</span></h2>
+                            <p class="text-muted max-width-450 mb-5">My progress over the years</p>
+                        </div>
+                    </div>
+                </div>
+                <!--    TimeLine Start   -->
+                <div class="row">
+                    <div class="col-lg-6">
+                        <h3 class="text-dark">
+                            <i class="fa fa-graduation-cap base-color"></i>
+                            Education
+                        </h3>
+                        <div class="timeline-items box-border">
+                            @foreach (var resume in resumes.Where(x => x.ResumeType == ResumeType.Education).OrderByDescending(x => x.Date))
+                            {
+                                <div class="timeline-item">
+                                    <div class="timeline-icon"></div>
+                                    <div class="timeline-contents">
+                                        <div class="time-line-header">
+                                            <h6 class="timeline-title">@resume.Title</h6>
+                                            <p class="timeline-year">@resume.Date.ToString("yyyy - MM")</p>
+                                        </div>
+                                        <div class="timeline-content">
+                                            @Html.Raw(resume.Description)
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mt-5 mt-lg-0">
+                        <h3 class="text-dark">
+                            <i class="fa fa-pencil base-color"></i>
+                            Experience
+                        </h3>
+                        <div class="timeline-items box-border">
+                            @foreach (var resume in resumes.Where(x => x.ResumeType == ResumeType.Experience).OrderByDescending(x => x.Date))
+                            {
+                                <div class="timeline-item">
+                                    <div class="timeline-icon"></div>
+                                    <div class="timeline-contents">
+                                        <div class="time-line-header">
+                                            <h6 class="timeline-title">@resume.Title</h6>
+                                            <p class="timeline-year">@resume.Date.ToString("yyyy - MM")</p>
+                                        </div>
+                                        <div class="timeline-content">
+                                            @Html.Raw(resume.Description)
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!--    TimeLine End   -->
+                <!--  Skill Start  -->
+                <div class="row mt-5">
+                    <!-- Skill -->
+                    <div class="col-lg-6">
+                        <div>
+                            <h3 class="mb-0">Work <span class="base-color"> Skills</span></h3>
+                        </div>
+                        <div id="skills" class="skill-box box-border">
+                            @foreach (var skill in skills.Where(x => x.SkillType == SkillType.ProcessBar))
+                            {
+                                <div class="skillbar clearfix" data-percent="@skill.Percent%">
+                                    <div class="skillbar-title"><span>@skill.Title</span></div>
+                                    <div class="skillbar-bar fill-skillbar"></div>
+                                    <div class="skill-bar-percent">@skill.Percent%</div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div>
+                            <h3 class="mb-0 mt-5 mt-lg-0">Other <span class="base-color"> Skills</span></h3>
+                        </div>
+                        <div class="language-bar box-border">
+                            @foreach (var skill in skills.Where(x => x.SkillType == SkillType.Stars))
+                            {
+                                var value = skill.Percent;
+
+                                <div class="language-skill row">
+                                    <h4 class="col-6 text-left mb-0">@skill.Title</h4>
+                                    <ul class="col-6 list-inline text-right mb-0">
+                                        @if (value > 0 && value <= 20)
+                                        {
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        }
+                                        @if (value > 20 && value <= 40)
+                                        {
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        }
+                                        @if (value > 40 && value <= 60)
+                                        {
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        }
+                                        @if (value > 60 && value <= 80)
+                                        {
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        }
+                                        @if (value > 80 && value <= 100)
+                                        {
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <i class="fa fa-star"></i>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!--   Skill End   -->
+            </div>
+        </div>
+    </div>
+</section>
+<!--     Resume End    -->
+<!-- Portfolio Start -->
+<section id="portfolio" class="portfolio">
+    <div class="display-table">
+        <div class="display-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center title">
+                            <h2 class="text-dark">My <span class="base-color">Works</span></h2>
+                            <p class="text-muted mb-5 max-width-450">Some of my portfolio</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--   Portfolio Filters   -->
+                    <ul id="portfolio-filter" class="list-unstyled list-inline mb-0 col-lg-12 text-center portfolio-filter">
+                        <li class="button-border list-inline-item">
+                            <a href="#" data-filter="*" class="pill-button active">All</a>
+                        </li>
+                        <li class="button-border list-inline-item">
+                            <a href="#" data-filter=".Website" class="pill-button active">@PortfolioType.Website</a>
+                        </li>
+                        <li class="button-border list-inline-item">
+                            <a href="#" data-filter=".Application" class="pill-button active">@PortfolioType.Application</a>
+                        </li>
+                        <li class="button-border list-inline-item">
+                            <a href="#" data-filter=".Seo" class="pill-button active">@PortfolioType.Seo</a>
+                        </li>
+                        <li class="button-border list-inline-item">
+                            <a href="#" data-filter=".Other" class="pill-button active">@PortfolioType.Other</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="portfolio-items row">
+                    @foreach (var portfolio in portfolios)
+                    {
+                        <div class="col-lg-4 portfolio-item @portfolio.PortfolioType">
+                            <div class="image-border">
+                                <div class="portfolio-item-content">
+                                    <img src="@portfolio.FilePath" alt="@portfolio.Title" class="img-fluid">
+                                    <div class="img-overlay text-center">
+                                        <div class="img-overlay-content">
+                                            <div class="portfolio-icon">
+                                                <a href="javascript:void()" type="button" data-toggle="modal" data-target="#@portfolio.Title">
+                                                    <i class="fa fa-link"></i>
+                                                </a>
+                                                <a href="@portfolio.FilePath" class="js-zoom-gallery">
+                                                    <i class="fa fa-search"></i>
+                                                </a>
+                                            </div>
+                                            <h5 class="mt-3 mb-0">@portfolio.Title</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  Portfolio End  -->
+<!-- Contact Start -->
+<section id="contact" class="contact">
+    <div class="display-table">
+        <div class="display-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-center title">
+                            <h2 class="text-dark">Get <span class="base-color">in Touch</span></h2>
+                            <p class="text-muted mb-5 max-width-450">Feel free to contact/hire me!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row contact-info">
+                    <div class="col-lg-4 mt-5">
+                        <div class="text-center">
+                            <div class="base-color">
+                                <i class="fa fa-phone fa-3x"></i>
+                            </div>
+                            <div class="mt-3">
+                                <h5 class="text-dark mb-0">Call Me On</h5>
+                                <a href="tel:@settings.PhoneNumber2" class="base-color">@settings.PhoneNumber2</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-5">
+                        <div class="text-center">
+                            <div class="base-color">
+                                <i class="fa fa-map fa-3x"></i>
+                            </div>
+                            <div class="mt-3">
+                                <h5 class="text-dark mb-0 contact_detail-title">Visit Office</h5>
+                                <span class="base-color">
+                                    @settings.Address
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt-5">
+                        <div class="text-center">
+                            <div class="base-color">
+                                <i class="fa fa-envelope fa-3x"></i>
+                            </div>
+                            <div class="mt-3">
+                                <h5 class="text-dark mb-0">Email Me At</h5>
+                                <a href="mailto:@settings.Email" class="base-color">@settings.Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 mt-5 contact-form">
+                        <form method="POST" asp-action="SendContact"
+                              data-ajax="true" data-ajax-method="post" data-ajax-loading="#spinner" data-ajax-complete="CompleteForm">
+                            <div class="row">
+                                <div class="col-lg-6 form-item">
+                                    <div class="form-group">
+                                        <input asp-for="Contact.FullName" class="form-control" placeholder="Your Name*">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 form-item">
+                                    <div class="form-group">
+                                        <input asp-for="Contact.Email" class="form-control" placeholder="Your Email*">
+                                    </div>
+                                </div>
+                                <div class="col-12 form-item">
+                                    <div class="form-group">
+                                        <input asp-for="Contact.Subject" class="form-control" placeholder="Your Subject*">
+                                    </div>
+                                </div>
+                                <div class="col-12 form-item">
+                                    <div class="form-group">
+                                        <textarea asp-for="Contact.Message" class="form-control" placeholder="Your message..."></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 mt-4 text-left">
+                                    <div class="button-border">
+                                        <button type="submit" class="pill-button">
+                                            <span id="spinner" style="display: none;">
+                                                <i class="fa fa-spinner fa-spin"></i>
+                                            </span>
+
+                                            Send Message
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row copy-right">
+                    <div class="col-12 text-center">
+                        <p>Copyright © @DateTime.Now.Year. Allrights reserved to <span class="base-color">Ali Momenzadeh</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--  Contact End  -->
