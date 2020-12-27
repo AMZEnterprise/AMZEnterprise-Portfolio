@@ -1,0 +1,45 @@
+﻿@model AMZEnterprisePortfolio.Models.Contact
+
+@{
+    Layout = "_FormLayout";
+    ViewData["Title"] = "Edit Contact";
+}
+@section Scripts
+{
+    <script>
+        Panel.InitialEditorReadOnly("#txtMessage");
+    </script>
+}
+<form asp-action="Edit" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" disabled="disabled" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" disabled="disabled" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Subject"></label>
+        <input asp-for="Subject" class="form-control" disabled="disabled" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Message"></label>
+        <textarea asp-for="Message" id="txtMessage"></textarea>
+    </div>
+    <div class="form-group">
+        <label asp-for="CreateDate"></label>
+        <input asp-for="CreateDate" class="form-control" disabled="disabled" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Ip"></label>
+        <input asp-for="Ip" class="form-control" disabled="disabled" />
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <a asp-action="Index" class="btn btn-danger float-right">Back</a>
+        <a asp-action="Delete" asp-route-id="@Model.Id" class="btn btn-danger float-right mr-2">Delete</a>
+    </div>
+</form>
