@@ -1,0 +1,36 @@
+﻿@model IEnumerable<AMZEnterprisePortfolio.Models.Skill>
+
+@{
+    ViewData["Title"] = "Skills";
+}
+@section Scripts
+{
+    <script>
+        Panel.LoadSkills('@Url.Action("LoadSkillsTable")', '@Url.Action("Edit")');
+    </script>
+}
+
+<div class="my-5">
+    <h1>@ViewData["Title"]</h1>
+    <a asp-action="Create" class="btn btn-success py-3 px-5 mt-3 ml-2 my-2">
+        Create
+        <span class="fa fa-plus"></span>
+    </a>
+</div>
+
+<table id="jq-table" class="table table-striped table-bordered dt-responsive nowrap table-dark" width="100%">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Percent)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkillType)
+            </th>
+            <th class="no-sort"></th>
+        </tr>
+    </thead>
+</table>
