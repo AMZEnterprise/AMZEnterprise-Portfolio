@@ -1,0 +1,38 @@
+﻿@model AMZEnterprisePortfolio.Areas.Panel.Models.ViewModels.UserLoginVm
+@{
+    Layout = "_LayoutManage";
+
+    ViewData["Title"] = "Login";
+}
+<div class="login-card">
+    <div class="login-card-header">
+        <h1>AMZ Enterprise</h1>
+    </div>
+    <div class="login-card-body">
+        <form asp-action="Login">
+            <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+            <div class="input-group">
+                <span class="input-group-text text-primary">
+                    <span class="fa fa-user"></span>
+                </span>
+                <input asp-for="UserName" placeholder="@Html.DisplayNameFor(u => u.UserName)" class="form-control" />
+            </div>
+            <span asp-validation-for="UserName"></span>
+
+            <div class="input-group mt-1">
+                <span class="input-group-text text-primary">
+                    <span class="fa fa-key"></span>
+                </span>
+                <input asp-for="Password" placeholder="@Html.DisplayNameFor(u => u.Password)" class="form-control" />
+                <br />
+            </div>
+            <span asp-validation-for="Password"></span>
+
+            <div class="form-group mt-2">
+                <input type="submit" value="Login" class="btn btn-primary btn-block py-4" />
+            </div>
+
+            <a asp-area="" asp-controller="Home" asp-action="Index" class="btn btn-dark btn-block mt-1">Back to website</a>
+        </form>
+    </div>
+</div>
