@@ -1,0 +1,96 @@
+﻿@model AMZEnterprisePortfolio.Models.Setting
+
+@{
+    Layout = "_FormLayout";
+    ViewData["Title"] = "Edit Settings";
+}
+
+<form asp-action="Index" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="PhoneNumber1"></label>
+        <input asp-for="PhoneNumber1" class="form-control" />
+        <span asp-validation-for="PhoneNumber1"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber2"></label>
+        <input asp-for="PhoneNumber2" class="form-control" />
+        <span asp-validation-for="PhoneNumber2"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CvFilePath"></label>
+        <input type="file" asp-for="CvFilePath" class="form-control" />
+        <span asp-validation-for="CvFilePath"></span>
+        <input type="hidden" asp-for="CvFilePathGuid" />
+    </div>
+    <div class="form-group">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Qualifications"></label>
+        <input asp-for="Qualifications" class="form-control" />
+        <span asp-validation-for="Qualifications"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Slogan"></label>
+        <input asp-for="Slogan" class="form-control" />
+        <span asp-validation-for="Slogan"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="BirthDate"></label>
+        <input asp-for="BirthDate" class="form-control" />
+        <span asp-validation-for="BirthDate"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WebsiteUrl1"></label>
+        <input asp-for="WebsiteUrl1" class="form-control" />
+        <span asp-validation-for="WebsiteUrl1"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="WebsiteUrl2"></label>
+        <input asp-for="WebsiteUrl2" class="form-control" />
+        <span asp-validation-for="WebsiteUrl2"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EducationalDegree"></label>
+        <input asp-for="EducationalDegree" class="form-control" />
+        <span asp-validation-for="EducationalDegree"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="AvailabilityStatus"></label>
+        <input asp-for="AvailabilityStatus" class="form-control" />
+        <span asp-validation-for="AvailabilityStatus"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="YearsCount"></label>
+        <input asp-for="YearsCount" class="form-control" />
+        <span asp-validation-for="YearsCount"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ClientsCount"></label>
+        <input asp-for="ClientsCount" class="form-control" />
+        <span asp-validation-for="ClientsCount"></span>
+    </div> <div class="form-group">
+        <label asp-for="ProjectsCount"></label>
+        <input asp-for="ProjectsCount" class="form-control" />
+        <span asp-validation-for="ProjectsCount"></span>
+    </div>
+
+    <input type="hidden" asp-for="Id" />
+    
+    <div class="form-group">
+        <button class="btn btn-primary float-left" type="submit">Edit</button>
+        <a asp-action="Index" class="btn btn-danger float-right">Back</a>
+    </div>
+</form>
