@@ -1,0 +1,19 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "font-awesome@4.7.0",
+      "destination": "wwwroot/lib/font-awesome/"
+    },
+    {
+      "library": "datatables@1.10.19",
+      "destination": "wwwroot/lib/datatables/"
+    },
+    {
+      "provider": "jsdelivr",
+      "library": "jquery-confirm@3.3.4",
+      "destination": "wwwroot/lib/jquery-confirm/"
+    }
+  ]
+}

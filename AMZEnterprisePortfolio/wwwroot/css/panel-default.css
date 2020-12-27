@@ -1,0 +1,305 @@
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+.input-validation-error {
+    border-color: var(--danger);
+    box-shadow: 0 0 4px 1px var(--danger);
+}
+
+.field-validation-error {
+    color: var(--danger);
+}
+textarea {
+    resize: none !important;
+}
+/* Sticky footer styles-------------------------------------------------- */
+@font-face {
+    font-family: "Poppins", sans-serif;
+}
+
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: #333030;
+    font-family: BYekan, 'Segoe UI', Tahoma, sans-serif !important;
+    color: white !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    height: 60px;
+    line-height: 60px;
+}
+
+
+.btn-warning, .btn-warning:hover, .btn-warning:active {
+    color: white;
+}
+
+thead a {
+    color: white;
+    display: inline-block;
+    width: 100%;
+}
+
+    thead a:hover {
+        color: var(--danger);
+    }
+
+.select2-container {
+    width: 100% !important;
+}
+
+.select2-selection__choice {
+    background-color: var(--dark) !important;
+}
+
+.select2-results__option {
+    color: var(--dark) !important;
+}
+
+#cke_txtContent {
+    border-radius: 5px !important;
+}
+
+table thead a {
+    color: rgb(249, 76, 116);
+}
+
+
+#media-preview-box {
+    width: 100%;
+}
+
+    #media-preview-box img {
+        max-width: 100%;
+    }
+
+
+#post-tags-box {
+    width: 100%;
+}
+
+    #post-tags-box span {
+        color: white;
+        background-color: var(--purple);
+        border-radius: 5px;
+        padding: 5px;
+        display: inline-block;
+        margin-top: 5px;
+    }
+
+#topLabel {
+    text-align: center;
+}
+
+
+
+
+
+#galleryModal .modal-dialog {
+    min-width: 100%;
+    margin: 0;
+}
+
+#galleryModal .modal-content {
+    min-height: 100vh;
+}
+
+.gallery-grid-item {
+    border-radius: 5px;
+    background-color: rgb(248, 248, 248);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+    height: 40vh;
+}
+
+    .gallery-grid-item img {
+        height: 100%;
+        width: 100%;
+    }
+
+#gallery-grid > div {
+    margin-top: 10px;
+}
+
+
+
+
+.setting-group-panel {
+    border: 1px solid white;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.setting-group-panel-header {
+    text-align: center;
+    padding: 10px;
+    background: #17a2b8;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-right: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 25px !important;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: var(--danger);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+
+
+
+
+
+
+.login-card {
+    background-color: var(--dark);
+    padding: 10px;
+    border-radius: 15px;
+    margin-top: 5vh;
+}
+
+.login-card-header{
+    text-align: center;
+}
+
+.login-card-header img {
+    height: 20vh !important;
+    width: 50%;
+}
+
+.login-card-body {
+    padding-top: 25px;
+}
+
+#profile-img {
+    max-width: 100%;
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+#files-preview {
+    text-align: center;
+}
+#files-preview .thumbnail {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}

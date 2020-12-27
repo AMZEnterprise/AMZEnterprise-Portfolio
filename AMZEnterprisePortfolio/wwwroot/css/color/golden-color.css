@@ -1,0 +1,98 @@
+/*-----------------------------------------------------------
+* Template Name    : Arshia - Fully Responsive Personal Template
+* Author           : Retrina Group
+* Version          : 1.0.0
+* Created          : June 2020
+* File Description : Color sass file of the template
+*------------------------------------------------------------*/
+::selection {
+  background: rgba(221, 174, 63, 0.3);
+}
+
+::-moz-selection {
+  background: rgba(221, 174, 63, 0.3);
+}
+
+.base-color {
+  color: #ddae3f !important;
+}
+
+.hero-social li a:hover, .blog-link a:hover {
+  color: #dba423 !important;
+}
+
+.bg-base-color {
+  background-color: #ddae3f !important;
+}
+
+.follow-label:before,
+.skill-box .fill-skillbar,
+.timeline-area:before,
+.testimonial .testimonial-border,
+.blog-content:before,
+.blog .owl-dot.active span {
+  background: #ddae3f;
+}
+
+.testimonial .owl-dot.active span {
+  background: #ddae3f !important;
+}
+
+.menu li a,
+header .navbar-brand span,
+header .navbar-brand b,
+.pill-button,
+.pill-button:hover,
+.ability ul li:before,
+.timeline-icon,
+.timeline-year,
+.language-skill ul li i,
+.contact .form-item .form-control,
+.comments .comment-info a,
+.portfolio .portfolio-icon a,
+.portfolio .portfolio-icon a:first-child,
+.blog-content button:hover,
+.comments .comment-info a:hover,
+.social a:hover {
+  color: #ddae3f;
+}
+
+.loader {
+  border-top: 4px solid #ddae3f !important;
+}
+
+.timeline-icon {
+  border: 1px solid #ddae3f;
+  background-color: #ddae3f;
+}
+
+.portfolio .portfolio-item-content::before {
+  background-color: rgba(221, 174, 63, 0.9);
+}
+
+.menu-toggler span {
+  background-color: #ddae3f;
+}
+
+.timeline-item:before {
+  border: 2px solid #ddae3f;
+}
+
+.timeline-item:before {
+  border: 1px solid #ddae3f;
+}
+
+/*-------------------------
+      Flat Demo
+-------------------------*/
+.flat-demo .button-border, .arshia-dark.flat-demo .button-border {
+  background-color: #ddae3f;
+}
+
+.flat-demo .pill-button:hover, .flat-demo .pill-button.active {
+  background-color: #dba423;
+}
+
+.arshia-dark .hero-social li a:hover {
+  color: #dba423 !important;
+}

@@ -1,0 +1,98 @@
+/*-----------------------------------------------------------
+* Template Name    : Arshia - Fully Responsive Personal Template
+* Author           : Retrina Group
+* Version          : 1.0.0
+* Created          : June 2020
+* File Description : Color sass file of the template
+*------------------------------------------------------------*/
+::selection {
+  background: rgba(255, 66, 116, 0.29);
+}
+
+::-moz-selection {
+  background: rgba(255, 66, 116, 0.29);
+}
+
+.base-color {
+  color: #ff4274 !important;
+}
+
+.hero-social li a:hover, .blog-link a:hover {
+  color: #f43568 !important;
+}
+
+.bg-base-color {
+  background-color: #ff4274 !important;
+}
+
+.follow-label:before,
+.skill-box .fill-skillbar,
+.timeline-area:before,
+.testimonial .testimonial-border,
+.blog-content:before,
+.blog .owl-dot.active span {
+  background: #ff4274;
+}
+
+.testimonial .owl-dot.active span {
+  background: #ff4274 !important;
+}
+
+.menu li a,
+.pill-button,
+header .navbar-brand span,
+header .navbar-brand b,
+.pill-button:hover,
+.ability ul li:before,
+.timeline-icon,
+.timeline-year,
+.language-skill ul li i,
+.contact .form-item .form-control,
+.portfolio .portfolio-icon a,
+.portfolio .portfolio-icon a:first-child,
+.comments .comment-info a,
+.blog-content button:hover,
+.comments .comment-info a:hover,
+.social a:hover {
+  color: #ff4274;
+}
+
+.loader {
+  border-top: 4px solid #ff4274 !important;
+}
+
+.timeline-icon {
+  border: 1px solid #ff4274;
+  background-color: #ff4274;
+}
+
+.portfolio .portfolio-item-content::before {
+  background-color: rgba(255, 66, 116, 0.9);
+}
+
+.menu-toggler span {
+  background-color: #ff4274;
+}
+
+.timeline-item:before {
+  border: 2px solid #ff4274;
+}
+
+.timeline-item:before {
+  border: 1px solid #ff4274;
+}
+
+/*-------------------------
+      Flat Demo
+-------------------------*/
+.flat-demo .button-border, .arshia-dark.flat-demo .button-border {
+  background-color: #ff4274;
+}
+
+.flat-demo .pill-button:hover, .flat-demo .pill-button.active {
+  background-color: #f43568;
+}
+
+.arshia-dark .hero-social li a:hover {
+  color: #f43568 !important;
+}

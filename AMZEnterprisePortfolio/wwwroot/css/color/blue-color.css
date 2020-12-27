@@ -1,0 +1,98 @@
+-----------------------------------------------------------
+ Template Name     Arshia - Fully Responsive Personal Template
+ Author            Retrina Group
+ Version           1.0.0
+ Created           June 2020
+ File Description  Color sass file of the template
+------------------------------------------------------------
+selection {
+  background rgba(27, 99, 173, 0.3);
+}
+
+-moz-selection {
+  background rgba(27, 99, 173, 0.3);
+}
+
+.base-color {
+  color #1b63ad !important;
+}
+
+.hero-social li ahover, .blog-link ahover {
+  color #135495 !important;
+}
+
+.bg-base-color {
+  background-color #1b63ad !important;
+}
+
+.follow-labelbefore,
+.skill-box .fill-skillbar,
+.timeline-areabefore,
+.testimonial .testimonial-border,
+.blog-contentbefore,
+.blog .owl-dot.active span {
+  background #1b63ad;
+}
+
+.testimonial .owl-dot.active span {
+  background #1b63ad !important;
+}
+
+.menu li a,
+.pill-button,
+header .navbar-brand span,
+header .navbar-brand b,
+.pill-buttonhover,
+.ability ul libefore,
+.timeline-icon,
+.timeline-year,
+.language-skill ul li i,
+.contact .form-item .form-control,
+.comments .comment-info a,
+.portfolio .portfolio-icon a,
+.portfolio .portfolio-icon afirst-child,
+.blog-content buttonhover,
+.comments .comment-info ahover,
+.social ahover {
+  color #1b63ad;
+}
+
+.loader {
+  border-top 4px solid #1b63ad !important;
+}
+
+.timeline-icon {
+  border 1px solid #1b63ad;
+  background-color #1b63ad;
+}
+
+.portfolio .portfolio-item-contentbefore {
+  background-color rgba(27, 99, 173, 0.9);
+}
+
+.menu-toggler span {
+  background-color #1b63ad;
+}
+
+.timeline-itembefore {
+  border 2px solid #1b63ad;
+}
+
+.timeline-itembefore {
+  border 1px solid #1b63ad;
+}
+
+-------------------------
+      Flat Demo
+-------------------------
+.flat-demo .button-border, .arshia-dark.flat-demo .button-border {
+  background-color #1b63ad;
+}
+
+.flat-demo .pill-buttonhover, .flat-demo .pill-button.active {
+  background-color #135495;
+}
+
+.arshia-dark .hero-social li ahover {
+  color #135495 !important;
+}
