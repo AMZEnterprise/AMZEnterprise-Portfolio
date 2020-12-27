@@ -1,0 +1,60 @@
+﻿@using AMZEnterprisePortfolio.Models
+@model AMZEnterprisePortfolio.Models.Portfolio
+
+@{
+    Layout = "_FormLayout";
+    ViewData["Title"] = "Create Portfolio";
+}
+
+@section Scripts
+{
+    <script>
+        Panel.InitialEditor("#txtShortDescription");
+        Panel.InitialEditor("#txtDescription");
+        Panel.InitialFilesPreview();
+    </script>
+}
+
+<form asp-action="Create" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ShortDescription"></label>
+        <textarea asp-for="ShortDescription" id="txtShortDescription"></textarea>
+        <span asp-validation-for="ShortDescription" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" id="txtDescription"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="EmployerFullName"></label>
+        <input asp-for="EmployerFullName" class="form-control" />
+        <span asp-validation-for="EmployerFullName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Technologies"></label>
+        <input asp-for="Technologies" class="form-control" />
+        <span asp-validation-for="Technologies" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="PortfolioType"></label>
+        <select asp-for="PortfolioType" asp-items="Html.GetEnumSelectList<PortfolioType>()" class="custom-select"></select>
+        <span asp-validation-for="PortfolioType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="FilePath"></label>
+        <input type="file" asp-for="FilePath" class="form-control" accept="image/*" id="input-files-hidden" />
+        <span asp-validation-for="FilePath"></span>
+        <div id="files-preview"></div>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success float-left" type="submit">Create</button>
+        <a asp-action="Index" class="btn btn-danger float-right">Back</a>
+    </div>
+</form>
