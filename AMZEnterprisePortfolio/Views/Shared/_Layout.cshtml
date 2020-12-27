@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ali Momenzadeh :: AMZEnterprise</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta name="author" content="Retrina Group" />
+
+    <!--  FavIcon  -->
+    <link rel="shortcut icon" href="~/img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700" rel="stylesheet">
+
+    <!-- FontAwesome Css -->
+    <link rel="stylesheet" href="~/lib/font-awesome/css/font-awesome.min.css">
+    <!-- Line icon Css -->
+    <link rel="stylesheet" href="~/css/LineIcons.css">
+    <!-- Bootstrap Css -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Owl Carousel Css -->
+    <link rel="stylesheet" href="~/css/owl.carousel.min.css">
+    <!-- Magnific Popup Css -->
+    <link rel="stylesheet" href="~/css/magnific-popup.css">
+    <!-- Colors Css -->
+    <link rel="stylesheet" href="~/css/color/red-color.css" id="option-color">
+    <!--  Custom Style CSS  -->
+    <link rel="stylesheet" href="~/css/main.css">
+
+    <link rel="stylesheet" href="~/lib/jquery-confirm/dist/jquery-confirm.min.css">
+</head>
+<body data-spy="scroll" data-target="#scrollspy" data-offset="1" class="@*flat-demo*@ arshia-dark">
+
+    <!--  Pre Loader  -->
+    <div id="overlayer"></div>
+    <span class="loader"></span>
+
+    <!--   Header Start -->
+    <header>
+        <div class="header-navbar h-100">
+            <a class="navbar-brand" href="#"><b>A</b><span>AMZ</span></a>
+            <ul class="list-group menu text-center" id="menu">
+                <li class="list-group-item"><a class="active" href="#hero"><i class="fa fa-home"></i><span>home</span></a></li>
+                <li class="list-group-item"><a href="#about"><i class="fa fa-user"></i><span>about</span></a></li>
+                <li class="list-group-item"><a href="#resume"><i class="fa fa-address-book"></i><span>resume</span></a></li>
+                <li class="list-group-item"><a href="#portfolio"><i class="fa fa-briefcase"></i><span>works</span></a></li>
+                <li class="list-group-item"><a href="#contact"><i class="fa fa-envelope-open"></i><span>contact</span></a></li>
+            </ul>
+            <div class="menu-toggler">
+                <span>
+                    <i class="text-white fa fa-list"></i>
+                </span>
+            </div>
+        </div>
+    </header>
+    <!--   Header End   -->
+
+    <main id="main">
+
+        @RenderBody()
+
+    </main>
+
+
+    <!--   Next and Prev Page -->
+    <div class="next-prev-page">
+        <button type="button" class="prev-page bg-base-color"><i class="fa fa-angle-up text-white"></i></button>
+        <button type="button" class="next-page bg-base-color mt-3"><i class="fa fa-angle-down text-white"></i></button>
+    </div>
+
+    <!-- End Options -->
+    <!--  JavaScripts  -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!--  Bootstrap Js  -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--  Easing Js  -->
+    <script src="~/js/jquery.easing.min.js"></script>
+    <!--  CountTo Js  -->
+    <script src="~/js/jquery.countTo.js"></script>
+    <!--  Typed Js  -->
+    <script src="~/js/typed.js"></script>
+    <!--  Magnific Popup Js  -->
+    <script src="~/js/jquery.magnific-popup.min.js"></script>
+    <!--  Isotope Js  -->
+    <script src="~/js/isotope.pkgd.min.js"></script>
+    <!--  Owl Carousel Js  -->
+    <script src="~/js/owl.carousel.min.js"></script>
+    <!--  Custom JS  -->
+    <script src="~/js/arshia.js"></script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <script src="~/lib/jquery-ajax-unobtrusive/jquery.unobtrusive-ajax.min.js"></script>
+
+    <script src="~/lib/jquery-confirm/dist/jquery-confirm.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
