@@ -1,0 +1,42 @@
+﻿@using AMZEnterprisePortfolio.Models
+@model AMZEnterprisePortfolio.Models.Resume
+
+@{
+    Layout = "_FormLayout";
+    ViewData["Title"] = "Create Resume";
+}
+
+@section Scripts
+{
+    <script>
+        Panel.InitialEditor("#txtDescription");
+    </script>
+}
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" id="txtDescription"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ResumeType"></label>
+        <select asp-for="ResumeType" asp-items="Html.GetEnumSelectList<ResumeType>()" class="custom-select"></select>
+        <span asp-validation-for="ResumeType" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Date"></label>
+        <input asp-for="Date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <button class="btn btn-success float-left" type="submit">Create</button>
+        <a asp-action="Index" class="btn btn-danger float-right">Back</a>
+    </div>
+</form>
